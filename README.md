@@ -16,4 +16,12 @@ To start project, run:
 docker-compose up
 ```
 
-The API will then be available at [http://127.0.0.1:8000](http://127.0.0.1:8000).
+The URL for the API http://127.0.0.1:8000.
+
+
+The API can be tested in Swagger by using the url from below:
+
+```
+http://127.0.0.1:8000/api/docs/
+```
+![Screenshot from 2023-03-16 14-02-43](https://user-images.githubusercontent.com/92254819/225641607-b7a3074b-e354-424d-8a5e-f1bd30e2381a.png)
