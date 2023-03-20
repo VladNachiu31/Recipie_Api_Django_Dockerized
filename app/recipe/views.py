@@ -93,6 +93,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
         """Create a new recipe."""
         serializer.save(user=self.request.user)
 
+
 @extend_schema_view(
     list=extend_schema(
         parameters=[
@@ -120,8 +121,9 @@ class BaseRecipeAttrViewSet(mixins.DestroyModelMixin,
         queryset = self.queryset
         if assigned_only:
             queryset = queryset.filter(recipe__isnull=False)
-
-        return queryset.filter(user=self.request.user).order_by('-name').distinct()
+        return queryset.filter(
+            user=self.request.user
+        ).order_by('-name').distinct()
 
 
 class TagViewSet(BaseRecipeAttrViewSet):
